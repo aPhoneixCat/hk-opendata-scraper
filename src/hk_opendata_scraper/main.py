@@ -36,7 +36,7 @@ utils.writeToCSV(DATASET_OVERVIEW_FILENAME, CSV_FIELD_NAMES, csvDataList)
 # Step Four.1. Scrape JSON format dataset
 logging.info('Step Four.1. Scrape JSON format dataset...')
 datasetList = datasetListDictToScape['datasets']
-datasetListOfJSON = [ dataset for dataset in datasetList if dataset['format'] == 'JSON'][22:SCRAPE_END_INDEX]
+datasetListOfJSON = [ dataset for dataset in datasetList if dataset['format'] == 'JSON'][SCRAPE_START_INDEX:SCRAPE_END_INDEX]
 for dataset in datasetListOfJSON:
     normalizedDatasetName = utils.normalizeDatasetName(dataset['name'])
     targetPath = f'target/JSON/{normalizedDatasetName}'
